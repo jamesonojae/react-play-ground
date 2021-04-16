@@ -1,10 +1,7 @@
 import React from 'react';
-import {From} from './Form';
 
-
-class App extends React.Component {
- // set data in local storage
-/*  setData() {
+const DataStorage = () => {
+  function setData() {
     let obj = {
       name: 'Onoja',
       age:12, email: 'myemail@gamil.com'
@@ -16,19 +13,22 @@ class App extends React.Component {
   }
 
   //get data
-  getData() {
+  const getData = () => {
     // let data = localStorage.getItem('myData');
     let data = sessionStorage.getItem('myData');
     data = JSON.parse(data);
     console.log(data);
-  }*/
-  render() {
+  }
+  render()
+  {
     return (
-      <div>
-      <From />
-      </div>
+        <div>
+          <button onClick={this.setData}>Set Data</button>
+          <button onClick={this.getData}>Get Data</button>
+
+        </div>
     );
   }
-}
+};
 
-export default App;
+export default DataStorage;
